@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/activity_base" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="      点击拍照按钮会先判断存储空间里是否有当前日期的文件夹,如果没有就创建一个以当前日期命名的文件夹（如20171203），有就直接将拍照后的图片压缩后以当前时间命名（如20171203121323.jpg）存储。点击提交按钮后，将当前日期对应的文件夹压缩并删除原文件夹，删除成功后上传文件到指定的服务器地址。上传成功后删除 .zip文件\n      提交方式为post,携带参数为 \n      id=设备id填写内的文本(String)\n      address=地址框内的内容(String)"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:text="   文件储存位置在: \n            内部存储设备\\android\\data\\\n            com.yl.myimageupdata\\cache\\" />
+
+</RelativeLayout>

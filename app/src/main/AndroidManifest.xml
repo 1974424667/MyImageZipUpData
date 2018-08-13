@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yl.myimageupdata">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".baseappliction.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ChangePasswordActivity" />
+        <activity android:name=".activity.AboutActivity" />
+
+        <!-- 注册 存储照的容器 -->
+        <!--
+        name:属性值，固定写法
+        authorities:组件标识，以包名开头,避免和其它应用发生冲突。和FileProvider.getUriForFile()方法的第二个参数一致
+        exported:要求必须为false，为true则会报安全异常。
+        grantUriPermissions:true，表示授予 URI 临时访问权限。
+        -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.yl.myimageupdata"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- 指定Uri的共享路径 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service android:name=".service.LoopsService" />
+
+        <activity android:name=".activity.MeActivity" />
+        <activity android:name=".activity.PhotographActivity" />
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.OneActivity" />
+        <activity android:name=".activity.TwoActivity" />
+        <activity android:name=".activity.ThreeActivity" />
+        <activity android:name=".activity.FourActivity" />
+        <activity android:name=".activity.FiveActivity" />
+        <activity android:name=".activity.SixActivity" />
+        <activity android:name=".activity.LoginBtnActivity" />
+    </application>
+
+</manifest>
